@@ -10,7 +10,8 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", (req, res) => {
-    res.render("index.ejs");
+    res.render("index.ejs"); 
+    // Login page
 });
 
 app.post("/login", async(req, res) => {
@@ -21,6 +22,7 @@ app.post("/login", async(req, res) => {
     if(email.length == 0 || password.length == 0){
         res.render("index.ejs", {
             error: "Please fill in both fields"
+            // ensuring that the user fills in both the username and password
         });
     }
 
@@ -30,8 +32,10 @@ app.post("/login", async(req, res) => {
         console.log(data);
         if(data.result == true){
             apiKey = data.token;
+            // if the username and password are correct and data.result == true
             res.redirect("/choice");
         } else{
+            // if the username and password are wrong or there is an error
             res.status(401);
             throw new Error(data.message);
         }
@@ -43,11 +47,13 @@ app.post("/login", async(req, res) => {
         });
     }
 
-})
+});
 
 app.get("/choice", (req, res) => {
     res.render("choices.ejs");
 });
+
+// The 3 choices lead to the same ejs file but with a different header, the ejs file will also be rendered differently for each choice
 
 app.get("/add", (req, res) => {
     res.render("log.ejs", {
@@ -72,6 +78,7 @@ app.post("/addSubmit", async (req, res) => {
     const logType = req.body.logTypes;
     const value = req.body.value;
     const note = req.body.notes;
+    // adding a log
     try{
         const response = await axios.get(`https://www.JadeDiabetes.com/api/1.0/add.json?token=${apiKey}&value=${value}&log_type=${logType}&notes=${note}`);
         const data = response.data;
@@ -80,6 +87,7 @@ app.post("/addSubmit", async (req, res) => {
             res.render("result.ejs",{
                 content: `Successfully added! Log_ID for the added data is ${data.id}`
             });
+            // shows a message if successful, if not successful, throwing an error with the error message returned by the API
         }
         else{
             throw new Error(data.message);
@@ -166,6 +174,7 @@ app.get("/log-range", async(req,res) => {
     try {
         const response = await axios.get(`https://www.JadeDiabetes.com/api/1.0/log_range?token=${apiKey}`);
         const data = response.data;
+        // getting the timing of first entry and timing of last entry 
         if(data.result){
             res.render("log-range.ejs", {
                 startDate: data.start_date,
