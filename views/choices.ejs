@@ -1,0 +1,19 @@
+<%- include("header.ejs") %>
+
+<h1 class="header">Welcome! What do you want to do today?</h1>
+<div class="container">
+    <form class="choice-container">
+        <input type="submit" name="add" id="add" class="choice-btn" value="Add Log" formaction="/add">
+        <input type="submit" name="update" id="update" class="choice-btn" value="Update Log" formaction="/update">
+        <input type="submit" name="delete" id="delete" class="choice-btn" value="Delete Log" formaction="/delete">
+    </form>
+
+    <form action="/log-range" method="get" class="log-range">
+        <input type="Submit" value="log range" class="btn" style="background-color: green;">
+    </form>
+
+    <form action="/logout" class="logout">
+        <input type="Submit" value="Logout" class="btn" style="background-color: orange;">
+    </form>
+</div>
+<%- include("footer.ejs") %>

@@ -1,0 +1,137 @@
+html{
+    font-family: "Open Sans", sans-serif;
+}
+
+.header{
+    width:100%;
+    text-align: center;
+    margin-top:2rem;
+    font-size: 2.5rem;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1px solid black;
+    width: 20rem;
+    padding: 1.5rem;
+
+    margin:auto;
+    margin-top:5rem;
+
+}
+
+
+.login-form > label {
+    /* margin:0.5rem; */
+    font-weight: bold;
+}
+
+.login-form > input[type = "text"]{
+    margin-top: -0.7rem;
+    width: 10rem;
+    height: 1rem;
+    font-size: 0.7rem;
+    font-family: "Open Sans", sans-serif;
+}
+
+.btn{
+    background-color: #41F8EC;
+    border: none;
+    padding: 0.5rem 0.8rem;
+    border-radius: 0.5rem;
+}
+
+.btn:hover{
+    background-color: #30bcb3;
+    cursor: pointer;
+}
+
+.error{
+    margin-top: 0.5rem;
+    color: red;
+    font-size: 0.7rem;
+}
+
+p{
+    margin: 0;
+}
+
+.choice-container{
+    display: flex;
+    height: 50vH;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    gap: 7rem;
+}
+
+.choice-btn{
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1.7rem;
+    height: 7rem;
+    width: 15rem;
+}
+
+.choice-btn:hover{
+    cursor: pointer;
+}
+#add{
+    background-color: green;
+}
+
+#update{
+    background-color: yellow;
+}
+#delete{
+    background-color: red;
+}
+
+.container{
+    margin: 2rem;
+}
+.types > li{
+    padding: 0.5rem;
+}
+
+.log-form > select{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.log-form > input{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+.log-form > textarea{
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.logout{
+    position: absolute;
+    bottom:5%;
+    right:5%;
+}
+
+.log-range{
+    position: absolute;
+    bottom:12%;
+    right:5%;
+}
+
+.display-result{
+    display:flex;
+    height:100vH;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 1100px) {
+    html{
+        font-size: small;
+    }
+}

@@ -1,0 +1,13 @@
+<%- include("header.ejs") %> 
+
+<div class="container">
+    <h1 class="header">First and Last entry</h1>
+    <p>First Log Entry: <%= startDate %></p>
+    <p>Last Log Entry: <%= lastDate %></p>
+    <form action="/choice" class="logout" method="get">
+        <input type="Submit" value="Back to choices" class="btn" style="background-color: orange;">
+    </form>
+</div>
+
+
+<%- include("footer.ejs") %>

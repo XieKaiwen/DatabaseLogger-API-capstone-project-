@@ -1,0 +1,11 @@
+<%- include("header.ejs") %>
+
+<div class="display-result">
+    <%=content%>
+
+    <form action="/choice" class="logout" method="get">
+        <input type="Submit" value="Back to choices" class="btn" style="background-color: orange;">
+    </form>
+</div>
+
+<%- include("footer.ejs") %>

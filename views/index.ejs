@@ -1,0 +1,19 @@
+<%- include("header.ejs") %>
+<h1 class="header">Welcome to your Diabetes Logger</h1>
+
+<div>
+    <form action="/login" method="post" class="login-form">
+        <label for="Email">Email</label><br>
+        <input type="text" name="email"><br>
+        <label for="Password">Password</label><br>
+        <input type="text" name="password"><br>
+        <input type="submit" class="btn">
+        <% if(locals.error){ %>
+            <p class="error"><%=error %></p>
+        <% } %>
+    </form>
+
+</div>
+
+<%- include("footer.ejs") %>
+    
